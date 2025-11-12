@@ -31,15 +31,27 @@ const Footer = () => {
               <li>
                 <a
                   href="#services"
-                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
+                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   Services
                 </a>
               </li>
               <li>
                 <a
-                  href="#how-it-work"
-                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
+                  href="#how-it-works"
+                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("how-it-works")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   How it works
                 </a>
@@ -47,7 +59,13 @@ const Footer = () => {
               <li>
                 <a
                   href="#faq"
-                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
+                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("faq")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   FAQ
                 </a>
@@ -55,7 +73,13 @@ const Footer = () => {
               <li>
                 <a
                   href="#contact-us"
-                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
+                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("contact-us")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   Contact Us
                 </a>
@@ -69,7 +93,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="#instagram"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
                   Instagram
@@ -77,7 +101,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#linkedin"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
                   Linkedin
@@ -92,7 +116,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:Insert.supply@gmail.com"
+                  href="mailto:athena.fashion.ca@gmail.com"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
                   athena.fashion.ca@gmail.com

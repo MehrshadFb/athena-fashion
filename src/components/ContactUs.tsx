@@ -78,7 +78,10 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="w-full bg-[#2c5b53] px-6 py-16 rounded-3xl md:px-8 md:py-20 lg:px-12 lg:py-24">
+    <section
+      id="contact-us"
+      className="w-full bg-[#2c5b53] px-6 py-16 rounded-3xl md:px-8 md:py-20 lg:px-12 lg:py-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

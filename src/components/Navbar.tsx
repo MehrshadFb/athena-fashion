@@ -17,31 +17,62 @@ const Navbar = () => {
         <div className="hidden items-center gap-8 md:flex">
           <a
             href="#services"
-            className="text-base font-normal text-black transition-opacity hover:opacity-70"
+            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("services")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Services
           </a>
           <a
-            href="#features"
-            className="text-base font-normal text-black transition-opacity hover:opacity-70"
+            href="#how-it-works"
+            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("how-it-works")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            Features
+            How it works
           </a>
           <a
-            href="#pricing"
-            className="text-base font-normal text-black transition-opacity hover:opacity-70"
+            href="#faq"
+            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("faq")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            Pricing
+            FAQ
           </a>
           <a
-            href="#how-it-work"
-            className="text-base font-normal text-black transition-opacity hover:opacity-70"
+            href="#contact-us"
+            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("contact-us")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            How it work
+            Contact Us
           </a>
         </div>
         <div className="hidden md:flex">
-          <button className="flex items-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white transition-all hover:bg-[#234740]">
+          <button
+            className="flex items-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white transition-all hover:bg-[#234740] cursor-pointer"
+            onClick={() => {
+              document
+                .getElementById("contact-us")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             Get in touch
             <svg
               width="16"
@@ -104,33 +135,65 @@ const Navbar = () => {
         <div className="mt-4 flex flex-col gap-6 border-t border-gray-200 pt-6 md:hidden">
           <a
             href="#services"
-            className="text-lg font-normal text-black"
-            onClick={() => setIsMenuOpen(false)}
+            className="text-lg font-normal text-black cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document
+                .getElementById("services")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Services
           </a>
           <a
-            href="#features"
-            className="text-lg font-normal text-black"
-            onClick={() => setIsMenuOpen(false)}
+            href="#how-it-works"
+            className="text-lg font-normal text-black cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document
+                .getElementById("how-it-works")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            Features
+            How it works
           </a>
           <a
-            href="#pricing"
-            className="text-lg font-normal text-black"
-            onClick={() => setIsMenuOpen(false)}
+            href="#faq"
+            className="text-lg font-normal text-black cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document
+                .getElementById("faq")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            Pricing
+            FAQ
           </a>
           <a
-            href="#how-it-work"
-            className="text-lg font-normal text-black"
-            onClick={() => setIsMenuOpen(false)}
+            href="#contact-us"
+            className="text-lg font-normal text-black cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document
+                .getElementById("contact-us")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            How it work
+            Contact Us
           </a>
-          <button className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white">
+          <button
+            className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white cursor-pointer"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document
+                .getElementById("contact-us")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             Get in touch
             <svg
               width="16"

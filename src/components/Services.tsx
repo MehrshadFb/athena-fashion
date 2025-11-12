@@ -39,7 +39,10 @@ const services: Service[] = [
 
 const Services = () => {
   return (
-    <section className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24">
+    <section
+      id="services"
+      className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24"
+    >
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex justify-center">
           <div className="flex items-center gap-2">

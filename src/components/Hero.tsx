@@ -39,7 +39,14 @@ const Hero = () => {
                 personal touch with every stitch.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <button className="flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-base font-normal text-[#2c5b53] transition-all hover:bg-gray-100">
+                <button
+                  className="flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-base font-normal text-[#2c5b53] transition-all hover:bg-gray-100 cursor-pointer"
+                  onClick={() => {
+                    document
+                      .getElementById("contact-us")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
                   Book Now
                   <svg
                     width="16"
@@ -57,8 +64,15 @@ const Hero = () => {
                     />
                   </svg>
                 </button>
-                <button className="text-base font-normal text-white transition-opacity hover:opacity-80">
-                  See Out Services
+                <button
+                  className="text-base font-normal text-white transition-opacity hover:opacity-80 cursor-pointer"
+                  onClick={() => {
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  See Our Services
                 </button>
               </div>
             </div>

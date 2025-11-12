@@ -58,7 +58,10 @@ const processSteps: ProcessStep[] = [
 
 const HowItWorks = () => {
   return (
-    <section className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24 xl:px-24">
+    <section
+      id="how-it-works"
+      className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24 xl:px-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex justify-center">
           <div className="flex items-center gap-2">
@@ -72,7 +75,14 @@ const HowItWorks = () => {
           A proven process to bring your dream outfit to life.
         </h2>
         <div className="mb-16 flex justify-center lg:mb-20">
-          <button className="flex items-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white transition-all hover:bg-[#234740]">
+          <button
+            className="flex items-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white transition-all hover:bg-[#234740] cursor-pointer"
+            onClick={() => {
+              document
+                .getElementById("contact-us")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             Get in touch
             <svg
               width="16"
