@@ -156,7 +156,7 @@ const Footer = () => {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-300 pt-8 md:flex-row">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <span>Copyright@2024</span>
+            <span>Copyright@2025</span>
             <span className="text-gray-400">●</span>
             <span>Athena Fashion</span>
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ideaImage from "../assets/idea.png";
 import fabricImage from "../assets/fabric.png";
 import craftImage from "../assets/craft.png";
@@ -58,8 +59,12 @@ const processSteps: ProcessStep[] = [
 
 const HowItWorks = () => {
   return (
-    <section
+    <motion.section
       id="how-it-works"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
       className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-16 lg:py-24 xl:px-24"
     >
       <div className="mx-auto max-w-7xl">
@@ -103,8 +108,12 @@ const HowItWorks = () => {
         </div>
         <div className="relative space-y-20 lg:space-y-32">
           {processSteps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`relative flex flex-col gap-8 lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 ${
                 step.alignment === "left" ? "lg:flex-row-reverse" : ""
               }`}
@@ -143,11 +152,11 @@ const HowItWorks = () => {
                   {step.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

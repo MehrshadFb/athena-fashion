@@ -1,9 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const AboutMe = () => {
   return (
-    <section
+    <motion.section
       id="about"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
       className="w-full px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-4xl">
@@ -54,7 +59,7 @@ const AboutMe = () => {
           </button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

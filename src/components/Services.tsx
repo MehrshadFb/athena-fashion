@@ -1,4 +1,5 @@
 import React, { JSX } from "react";
+import { motion } from "framer-motion";
 import scissor from "../assets/scissor.svg";
 import dress from "../assets/dress.svg";
 import sewing from "../assets/sewing.svg";
@@ -39,8 +40,12 @@ const services: Service[] = [
 
 const Services = () => {
   return (
-    <section
+    <motion.section
       id="services"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
       className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-6xl">
@@ -57,7 +62,14 @@ const Services = () => {
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col items-center text-center"
+            >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#2c5b53]">
                 {service.icon}
               </div>
@@ -67,11 +79,11 @@ const Services = () => {
               <p className="text-sm font-normal leading-relaxed text-gray-600 md:text-base">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

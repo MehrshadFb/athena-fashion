@@ -1,9 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 import sewingMachine from "../assets/sewing-machine.webp";
 
 const Hero = () => {
   return (
-    <section className="w-full bg-white px-6 py-2 md:px-8 lg:px-12">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="w-full bg-white px-6 py-2 md:px-8 lg:px-12"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-3xl bg-[#2c5b53] px-8 py-16 md:px-12 lg:px-16 lg:py-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
@@ -88,7 +95,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

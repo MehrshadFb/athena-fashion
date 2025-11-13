@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface FAQItem {
   question: string;
@@ -41,8 +42,12 @@ const FAQ = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="faq"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
       className="w-full bg-white px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-3xl">
@@ -59,8 +64,12 @@ const FAQ = () => {
         </h2>
         <div className="space-y-0">
           {faqData.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="border-b border-gray-200 transition-all last:border-b-0"
             >
               <button
@@ -105,11 +114,11 @@ const FAQ = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

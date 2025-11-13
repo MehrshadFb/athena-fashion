@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import athena from "../assets/athena.png";
 
 const ContactUs = () => {
@@ -79,8 +80,12 @@ const ContactUs = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="contact-us"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
       className="w-full bg-[#2c5b53] px-6 py-16 rounded-3xl md:px-8 md:py-20 lg:px-12 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
@@ -217,7 +222,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
