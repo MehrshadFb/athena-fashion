@@ -79,33 +79,6 @@ const HowItWorks = () => {
         <h2 className="mb-12 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-16 lg:text-5xl">
           A proven process to bring your dream outfit to life.
         </h2>
-        <div className="mb-16 flex justify-center lg:mb-20">
-          <button
-            className="flex items-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white transition-all hover:bg-[#234740] cursor-pointer"
-            onClick={() => {
-              document
-                .getElementById("contact-us")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Get in touch
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.33325 8.00004H14.6666M14.6666 8.00004L7.99992 1.33337M14.6666 8.00004L7.99992 14.6667"
-                stroke="white"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
         <div className="relative space-y-20 lg:space-y-32">
           {processSteps.map((step, index) => (
             <motion.div
