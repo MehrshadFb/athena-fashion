@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import athena from "../assets/athena.png";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -208,8 +209,8 @@ const ContactUs = () => {
           <div className="relative flex items-center justify-center lg:justify-end">
             <div className="relative h-[400px] w-full overflow-hidden rounded-3xl lg:h-[600px]">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop"
-                alt="Contact us"
+                src={athena}
+                alt="Professional Tailor"
                 className="h-full w-full object-cover"
               />
             </div>

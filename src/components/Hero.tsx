@@ -1,5 +1,5 @@
 import React from "react";
-import athena from "../assets/athena.png";
+import sewingMachine from "../assets/sewing-machine.webp";
 
 const Hero = () => {
   return (
@@ -79,8 +79,8 @@ const Hero = () => {
             <div className="relative flex items-center justify-center lg:justify-end">
               <div className="relative h-[400px] w-full overflow-hidden rounded-2xl lg:h-[500px]">
                 <img
-                  src={athena}
-                  alt="Professional consultant"
+                  src={sewingMachine}
+                  alt="Sewing Machine"
                   className="h-full w-full object-cover"
                 />
               </div>
