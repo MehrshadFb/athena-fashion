@@ -20,10 +20,10 @@ const AboutMe = () => {
             </span>
           </div>
         </div>
-        <h2 className="mb-8 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-12 lg:text-5xl">
+        <h2 className="mb-12 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-16 lg:text-5xl">
           Who I am
         </h2>
-        <p className="mb-12 text-center text-base font-normal leading-relaxed text-gray-600 md:text-lg lg:text-xl">
+        <p className="mb-12 text-center text-base font-normal leading-relaxed text-gray-600 md:text-lg lg:mb-16 lg:text-xl">
           Hi, I'm Athena, a professional designer and dressmaker with a passion
           for creating timeless fashion. Since 2010, I have been dedicated to
           designing and tailoring bespoke garments that fit beautifully and

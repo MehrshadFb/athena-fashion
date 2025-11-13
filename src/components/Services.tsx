@@ -57,7 +57,7 @@ const Services = () => {
             </span>
           </div>
         </div>
-        <h2 className="mb-16 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-20 lg:text-5xl">
+        <h2 className="mb-12 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-16 lg:text-5xl">
           Key benefits that set us apart from other tailors
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">

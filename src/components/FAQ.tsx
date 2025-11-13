@@ -59,7 +59,7 @@ const FAQ = () => {
             </span>
           </div>
         </div>
-        <h2 className="mb-16 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:text-5xl">
+        <h2 className="mb-12 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-16 lg:text-5xl">
           Answers to your questions
         </h2>
         <div className="space-y-0">

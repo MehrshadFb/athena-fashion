@@ -9,7 +9,7 @@ const Hero = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
-      className="w-full bg-white px-6 py-2 md:px-8 lg:px-12"
+      className="w-full bg-white px-6 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20"
     >
       <div className="mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-3xl bg-[#2c5b53] px-8 py-16 md:px-12 lg:px-16 lg:py-20">

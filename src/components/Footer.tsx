@@ -108,6 +108,7 @@ const Footer = () => {
               <li>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.instagram.com/athena.fashion.ca/"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
@@ -117,6 +118,7 @@ const Footer = () => {
               <li>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.linkedin.com/in/atena-rahimisadegh-0325192b5/"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
