@@ -28,6 +28,18 @@ const Navbar = () => {
             Services
           </a>
           <a
+            href="#about"
+            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            About Me
+          </a>
+          <a
             href="#how-it-works"
             className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
             onClick={(e) => {
@@ -145,6 +157,19 @@ const Navbar = () => {
             }}
           >
             Services
+          </a>
+          <a
+            href="#about"
+            className="text-lg font-normal text-black cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            About Me
           </a>
           <a
             href="#how-it-works"

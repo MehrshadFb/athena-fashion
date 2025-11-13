@@ -44,6 +44,20 @@ const Footer = () => {
               </li>
               <li>
                 <a
+                  href="#about"
+                  className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  About Me
+                </a>
+              </li>
+              <li>
+                <a
                   href="#how-it-works"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
                   onClick={(e) => {
@@ -93,7 +107,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#instagram"
+                  target="_blank"
+                  href="https://www.instagram.com/athena.fashion.ca/"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
                   Instagram
@@ -101,7 +116,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#linkedin"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/atena-rahimisadegh-0325192b5/"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
                   Linkedin
