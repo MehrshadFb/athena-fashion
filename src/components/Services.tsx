@@ -58,7 +58,7 @@ const Services = () => {
           </div>
         </div>
         <h2 className="mb-12 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-16 lg:text-5xl">
-          Key benefits that set us apart from other tailors
+          Our tailoring services crafted just for you
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {services.map((service, index) => (

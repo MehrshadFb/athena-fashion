@@ -9,7 +9,6 @@ const ContactUs = () => {
     phone: "",
     comment: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     show: boolean;
@@ -58,6 +57,7 @@ const ContactUs = () => {
           phone: "",
           comment: "",
         });
+        // Hide the message after 5 seconds
         setTimeout(() => {
           setSubmitStatus({ show: false, success: false, message: "" });
         }, 5000);
