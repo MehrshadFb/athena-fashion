@@ -19,9 +19,14 @@ const Footer = () => {
                 Athena Fashion
               </span>
             </div>
-            <p className="mb-6 text-sm text-left font-normal leading-relaxed text-gray-600 md:text-base">
-              2nd Floor, 685 Queen St W, Toronto, ON M6J 1E6
-            </p>
+            <a
+              href="https://www.google.com/maps/place/Athena+Fashion+(%D8%AE%DB%8C%D8%A7%D8%B7%DB%8C)%E2%80%AD/@43.6468921,-79.4056544,18z/data=!3m2!4b1!5s0x882b34e73205aef7:0x3d2f2c9b6be62909!4m6!3m5!1s0x882b35ad17ade3a3:0xbf90f3ab94bcbf5c!8m2!3d43.6468921!4d-79.4050107!16s%2Fg%2F11yc7vl54b?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-6 text-sm text-left font-normal leading-relaxed text-gray-600 md:text-base hover:underline cursor-pointer"
+            >
+              685 Queen St W, 2nd Floor <br />Toronto, ON M6J 1E6
+            </a>
           </div>
           <div>
             <h3 className="mb-4 text-base font-semibold text-black md:text-lg">
@@ -158,7 +163,7 @@ const Footer = () => {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-300 pt-8 md:flex-row">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <span>Copyright@2025</span>
+            <span>Copyright @ 2026</span>
             <span className="text-gray-400">●</span>
             <span>Athena Fashion</span>
           </div>
