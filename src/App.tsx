@@ -15,14 +15,22 @@ type Page = "home" | "portfolio";
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("home");
 
-  const navigateTo = (page: Page) => {
+  const navigateTo = (page: Page, scrollTarget?: string) => {
     setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (scrollTarget) {
+      setTimeout(() => {
+        document.getElementById(scrollTarget)?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   if (currentPage === "portfolio") {
     return (
-      <PortfolioPage onNavigateHome={() => navigateTo("home")} />
+      <PortfolioPage
+        onNavigateHome={(sectionId) => navigateTo("home", sectionId)}
+      />
     );
   }
 

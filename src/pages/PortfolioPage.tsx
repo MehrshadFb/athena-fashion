@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import portfolioImages from "../data/portfolioImages";
 
 interface PortfolioPageProps {
-  onNavigateHome: () => void;
+  onNavigateHome: (sectionId?: string) => void;
 }
 
 type ColumnCount = 2 | 3 | 4;
@@ -38,7 +38,11 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onNavigatePortfolio={onNavigateHome} isPortfolioPage />
+      <Navbar
+        onNavigatePortfolio={() => {}}
+        onNavigateHome={onNavigateHome}
+        isPortfolioPage
+      />
 
       <main className="w-full px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24">
         <div className="mx-auto max-w-7xl">
@@ -49,28 +53,6 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <button
-              onClick={onNavigateHome}
-              className="mb-8 flex items-center gap-2 text-sm font-normal text-[#2c5b53] transition-opacity hover:opacity-70 cursor-pointer"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14.6666 8.00004H1.33325M1.33325 8.00004L7.99992 1.33337M1.33325 8.00004L7.99992 14.6667"
-                  stroke="#2c5b53"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Back to Home
-            </button>
-
             <div className="mb-4 flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-[#2c5b53]"></div>
               <span className="text-xs font-normal uppercase tracking-wide text-[#2c5b53] md:text-sm">
