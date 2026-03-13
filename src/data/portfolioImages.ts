@@ -8,6 +8,10 @@ import img07 from "../assets/portfolio/07-brown-corduroy-jacket.jpg";
 import img08 from "../assets/portfolio/08-red-blazer.jpg";
 import img09 from "../assets/portfolio/09-burgundy-dress.jpg";
 import img10 from "../assets/portfolio/10-grey-knit-blazer.jpg";
+import img11 from "../assets/portfolio/11-purple-ombre-gown.jpg";
+import img12 from "../assets/portfolio/12-ice-blue-layered-gown.jpg";
+import img13 from "../assets/portfolio/13-burgundy-peplum-blazer.jpg";
+import img14 from "../assets/portfolio/14-plum-printed-gown.jpg";
 
 export interface PortfolioImage {
   src: string;
@@ -28,6 +32,10 @@ const portfolioImages: PortfolioImage[] = [
   { src: img08, alt: "Red structured blazer" },
   { src: img09, alt: "Burgundy double-breasted dress" },
   { src: img10, alt: "Grey blazer with knit patterned sleeves" },
+  { src: img11, alt: "Purple ombré off-shoulder satin gown" },
+  { src: img12, alt: "Ice blue layered halter gown" },
+  { src: img13, alt: "Burgundy peplum blazer with structured lapels" },
+  { src: img14, alt: "Plum satin gown with hand-printed artwork and text" },
 ];
 
 export default portfolioImages;
