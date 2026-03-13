@@ -66,6 +66,15 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             How it works
           </a>
+          <button
+            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
+            onClick={() => {
+              setIsMenuOpen(false);
+              onNavigatePortfolio?.();
+            }}
+          >
+            Portfolio
+          </button>
           <a
             href="#faq"
             className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
@@ -80,15 +89,6 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             Contact Us
           </a>
-          <button
-            className="text-base font-normal text-black transition-opacity hover:opacity-70 cursor-pointer"
-            onClick={() => {
-              setIsMenuOpen(false);
-              onNavigatePortfolio?.();
-            }}
-          >
-            Portfolio
-          </button>
         </div>
 
         <div className="hidden md:flex">
@@ -157,6 +157,15 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             How it works
           </a>
+          <button
+            className="text-lg font-normal text-black cursor-pointer text-left"
+            onClick={() => {
+              setIsMenuOpen(false);
+              onNavigatePortfolio?.();
+            }}
+          >
+            Portfolio
+          </button>
           <a
             href="#faq"
             className="text-lg font-normal text-black cursor-pointer"
@@ -171,15 +180,6 @@ const Navbar: React.FC<NavbarProps> = ({
           >
             Contact Us
           </a>
-          <button
-            className="text-lg font-normal text-black cursor-pointer text-left"
-            onClick={() => {
-              setIsMenuOpen(false);
-              onNavigatePortfolio?.();
-            }}
-          >
-            Portfolio
-          </button>
           <button
             className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-[#2c5b53] px-6 py-3 text-base font-normal text-white cursor-pointer"
             onClick={handleContactClick}
