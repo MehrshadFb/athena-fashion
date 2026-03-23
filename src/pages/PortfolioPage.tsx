@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import portfolioImages from "../data/portfolioImages";
+import portfolioCategories from "../data/portfolioImages";
 
 interface PortfolioPageProps {
   onNavigateHome: (sectionId?: string) => void;
@@ -22,17 +22,29 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
     4: "columns-1 sm:columns-2 lg:columns-3 xl:columns-4",
   };
 
+  const allImages = portfolioCategories.flatMap((category) => category.images);
+  let currentStartIndex = 0;
+  const categorySections = portfolioCategories.map((category) => {
+    const section = {
+      ...category,
+      startIndex: currentStartIndex,
+    };
+    currentStartIndex += category.images.length;
+
+    return section;
+  });
+
   const handlePrev = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex(
-      lightboxIndex === 0 ? portfolioImages.length - 1 : lightboxIndex - 1
+      lightboxIndex === 0 ? allImages.length - 1 : lightboxIndex - 1
     );
   };
 
   const handleNext = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex(
-      lightboxIndex === portfolioImages.length - 1 ? 0 : lightboxIndex + 1
+      lightboxIndex === allImages.length - 1 ? 0 : lightboxIndex + 1
     );
   };
 
@@ -65,7 +77,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
               </h1>
 
               {/* Grid size control */}
-              {portfolioImages.length > 0 && (
+              {allImages.length > 0 && (
                 <div className="flex items-center gap-3">
                   <span className="text-sm font-normal text-gray-500">
                     Grid
@@ -91,7 +103,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
           </motion.div>
 
           {/* Gallery */}
-          {portfolioImages.length === 0 ? (
+          {allImages.length === 0 ? (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -134,26 +146,44 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className={`${columnClass[columns]} gap-4`}
+              className="space-y-12"
             >
-              {portfolioImages.map((image, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="mb-4 break-inside-avoid overflow-hidden rounded-2xl cursor-pointer group"
-                  onClick={() => setLightboxIndex(index)}
-                >
-                  <div className="relative overflow-hidden rounded-2xl">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20 rounded-2xl" />
+              {categorySections.map((category, sectionIndex) => (
+                <div key={category.name} className="space-y-5">
+                  <div className="space-y-2">
+                    <h2 className="font-serif text-2xl font-normal text-black md:text-3xl">
+                      {category.name}
+                    </h2>
+                    <div className="h-px w-full bg-gray-200" />
                   </div>
-                </motion.div>
+
+                  <div className={`${columnClass[columns]} gap-4`}>
+                    {category.images.map((image, index) => {
+                      const globalIndex = category.startIndex + index;
+                      const animationIndex = sectionIndex * 6 + index;
+
+                      return (
+                        <motion.div
+                          key={`${category.name}-${index}`}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: animationIndex * 0.04 }}
+                          className="mb-4 break-inside-avoid overflow-hidden rounded-2xl cursor-pointer group"
+                          onClick={() => setLightboxIndex(globalIndex)}
+                        >
+                          <div className="relative overflow-hidden rounded-2xl">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20 rounded-2xl" />
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
               ))}
             </motion.div>
           )}
@@ -186,7 +216,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
             </svg>
           </button>
 
-          {portfolioImages.length > 1 && (
+          {allImages.length > 1 && (
             <>
               <button
                 className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20 cursor-pointer"
@@ -238,14 +268,14 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
           )}
 
           <img
-            src={portfolioImages[lightboxIndex].src}
-            alt={portfolioImages[lightboxIndex].alt}
+            src={allImages[lightboxIndex].src}
+            alt={allImages[lightboxIndex].alt}
             className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain"
             onClick={(e) => e.stopPropagation()}
           />
 
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-normal text-white/60">
-            {lightboxIndex + 1} / {portfolioImages.length}
+            {lightboxIndex + 1} / {allImages.length}
           </div>
         </div>
       )}
