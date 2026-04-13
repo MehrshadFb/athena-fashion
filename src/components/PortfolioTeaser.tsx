@@ -31,8 +31,7 @@ const PortfolioTeaser: React.FC<PortfolioTeaserProps> = ({
             </h2>
 
             <p className="mb-10 max-w-xl text-base font-normal leading-relaxed text-gray-600 md:text-lg">
-              From delicate alterations to full gown creations — browse our
-              gallery and see the craftsmanship behind every stitch.
+              Browse our portfolio of custom-made designs, where every garment is thoughtfully created and sewn to perfection.
             </p>
 
             <button
