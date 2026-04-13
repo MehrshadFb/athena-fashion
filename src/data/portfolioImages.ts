@@ -1,95 +1,64 @@
-import img9600 from "../assets/portfolio/9600.png";
-import imgDSC07986 from "../assets/portfolio/DSC07986.jpeg";
-import img0183 from "../assets/portfolio/IMG_0183.jpeg";
-import img0187 from "../assets/portfolio/IMG_0187.jpeg";
-import img0195 from "../assets/portfolio/IMG_0195.png";
-import img0198 from "../assets/portfolio/IMG_0198.jpeg";
-import img0212 from "../assets/portfolio/IMG_0212.jpeg";
-import img0213 from "../assets/portfolio/IMG_0213.jpeg";
-import img0215 from "../assets/portfolio/IMG_0215.jpeg";
-import img0238 from "../assets/portfolio/IMG_0238.jpeg";
-import img0245 from "../assets/portfolio/IMG_0245.jpeg";
-import img0249 from "../assets/portfolio/IMG_0249.png";
-import img0255 from "../assets/portfolio/IMG_0255.jpeg";
-import img0272 from "../assets/portfolio/IMG_0272.jpeg";
-import img0277 from "../assets/portfolio/IMG_0277.jpeg";
-import img0287 from "../assets/portfolio/IMG_0287.jpeg";
-import img1819 from "../assets/portfolio/IMG_1819.jpeg";
-import img3062 from "../assets/portfolio/IMG_3062.jpeg";
-import img9554 from "../assets/portfolio/IMG_9554.jpeg";
-import img9556 from "../assets/portfolio/IMG_9556.jpeg";
-import img9561 from "../assets/portfolio/IMG_9561.jpeg";
-import img9577 from "../assets/portfolio/IMG_9577.jpeg";
-import img9579 from "../assets/portfolio/IMG_9579.jpeg";
+import img2_3 from "../assets/portfolio/2.3.jpeg";
+import img2_1 from "../assets/portfolio/2.1.png";
+import img2_2 from "../assets/portfolio/2.2.jpeg";
+import img15 from "../assets/portfolio/15.jpeg";
+import img14 from "../assets/portfolio/14.jpeg";
+import img3 from "../assets/portfolio/3.jpeg";
+import img13 from "../assets/portfolio/13.jpeg";
+import img12 from "../assets/portfolio/12.jpeg";
+import img11 from "../assets/portfolio/11.png";
+import img9 from "../assets/portfolio/9.jpeg";
+import img1_1 from "../assets/portfolio/1.1.jpeg";
+import img1_2 from "../assets/portfolio/1.2.jpeg";
+import img4 from "../assets/portfolio/4.jpeg";
+import img5_1 from "../assets/portfolio/5.1.jpeg";
+import img5_2 from "../assets/portfolio/5.2.jpeg";
+import img5_3 from "../assets/portfolio/5.3.jpeg";
+import imgUntitled from "../assets/portfolio/Untitled design.png";
+import img6 from "../assets/portfolio/6.jpeg";
+import img7_1 from "../assets/portfolio/7.1.jpeg";
+import img7_2 from "../assets/portfolio/7.2.jpeg";
+import img8 from "../assets/portfolio/8.jpeg";
+import img10 from "../assets/portfolio/10.jpeg";
+import img16 from "../assets/portfolio/16.jpeg";
+import img17 from "../assets/portfolio/17.jpeg";
+import img18 from "../assets/portfolio/18.jpeg";
 import img9594 from "../assets/portfolio/IMG_9594.jpeg";
-import img9599 from "../assets/portfolio/IMG_9599.jpeg";
-import imgUntitledDesign from "../assets/portfolio/Untitled design.png";
+import img19 from "../assets/portfolio/19.jpeg";
 
 export interface PortfolioImage {
   src: string;
   alt: string;
 }
 
-export interface PortfolioCategory {
-  name: string;
-  images: PortfolioImage[];
-}
-
-/**
- * Portfolio is organized into grouped sections so each style can be explored separately.
- */
-const portfolioCategories: PortfolioCategory[] = [
-  {
-    name: "Tailored Jackets & Blazers",
-    images: [
-      { src: img0183, alt: "Tailored look in structured blazer" },
-      { src: img0187, alt: "Textured jacket with minimalist lines" },
-      { src: img0198, alt: "Burgundy tailored blazer with clean silhouette" },
-      { src: img0212, alt: "Patterned blazer with curved seam detailing" },
-      { src: img0213, alt: "Modern grey blazer with statement sleeves" },
-      { src: img0215, alt: "Structured black lace and trouser ensemble" },
-    ],
-  },
-  {
-    name: "Statement Dresses & Gowns",
-    images: [
-      { src: img0238, alt: "Off-shoulder satin gown" },
-      { src: img0245, alt: "Hand-printed satin gown with art motifs" },
-      { src: img0249, alt: "Soft draped pink mini dress on mannequin" },
-      { src: img0255, alt: "Teal floor-length gown with lace bodice" },
-      { src: img0272, alt: "Rose-tone dress with contrast blouse styling" },
-      { src: img0277, alt: "Polka-dot dress with gathered sleeves" },
-      { src: img0287, alt: "Flowing teal gown with sculptural shoulder detail" },
-    ],
-  },
-  {
-    name: "Bridal Collection",
-    images: [
-      { src: img9554, alt: "Bridal gown with lace bodice and long veil" },
-      { src: img9556, alt: "Bridal portrait in layered white gown" },
-      { src: img9561, alt: "White bridal dress in studio portrait" },
-      { src: img9577, alt: "Wedding gown with floral lace veil" },
-      { src: img9579, alt: "Elegant bridal look with bouquet" },
-    ],
-  },
-  {
-    name: "Contemporary Sets & Occasionwear",
-    images: [
-      { src: img9594, alt: "Embroidered cocktail dress in soft peach tones" },
-      { src: img9599, alt: "Black top with sheer polka-dot sleeves" },
-      { src: img1819, alt: "Monochrome draped outerwear set" },
-      { src: img9600, alt: "Layered ice-blue evening set" },
-      { src: imgDSC07986, alt: "Blue coordinated set with floral detailing" },
-    ],
-  },
-  {
-    name: "Studio & Craft Highlights",
-    images: [
-      { src: img3062, alt: "Designer presenting handcrafted printed gown" },
-      { src: img0195, alt: "Back view of lace craftsmanship and finish" },
-      { src: imgUntitledDesign, alt: "Design collage from latest collection" },
-    ],
-  },
+const portfolioImages: PortfolioImage[] = [
+  { src: img2_3, alt: "Portfolio image 2.3" },
+  { src: img2_1, alt: "Portfolio image 2.1" },
+  { src: img2_2, alt: "Portfolio image 2.2" },
+  { src: img15, alt: "Portfolio image 15" },
+  { src: img14, alt: "Portfolio image 14" },
+  { src: img3, alt: "Portfolio image 3" },
+  { src: img13, alt: "Portfolio image 13" },
+  { src: img12, alt: "Portfolio image 12" },
+  { src: img11, alt: "Portfolio image 11" },
+  { src: img9, alt: "Portfolio image 9" },
+  { src: img1_1, alt: "Portfolio image 1.1" },
+  { src: img1_2, alt: "Portfolio image 1.2" },
+  { src: img4, alt: "Portfolio image 4" },
+  { src: img5_1, alt: "Portfolio image 5.1" },
+  { src: img5_2, alt: "Portfolio image 5.2" },
+  { src: img5_3, alt: "Portfolio image 5.3" },
+  { src: imgUntitled, alt: "Portfolio design" },
+  { src: img6, alt: "Portfolio image 6" },
+  { src: img7_1, alt: "Portfolio image 7.1" },
+  { src: img7_2, alt: "Portfolio image 7.2" },
+  { src: img8, alt: "Portfolio image 8" },
+  { src: img10, alt: "Portfolio image 10" },
+  { src: img16, alt: "Portfolio image 16" },
+  { src: img17, alt: "Portfolio image 17" },
+  { src: img18, alt: "Portfolio image 18" },
+  { src: img9594, alt: "Portfolio image 9594" },
+  { src: img19, alt: "Portfolio image 19" },
 ];
 
-export default portfolioCategories;
+export default portfolioImages;
