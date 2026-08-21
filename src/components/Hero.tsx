@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import sewingMachine from "../assets/sewing-machine.webp";
 
 const GOOGLE_REVIEW_URL =
-  "https://www.google.com/search?q=Athena+Fashion+685+Queen+St+W+Toronto#lrd=0x882b35ad17ade3a3:0xbf90f3ab94bcbf5c,3";
+  "https://search.google.com/local/writereview?placeid=ChIJo-OtF601K4gRXL-8lKvzkL8";
 
 const Hero = () => {
   return (
