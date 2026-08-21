@@ -2,6 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import sewingMachine from "../assets/sewing-machine.webp";
 
+const GOOGLE_REVIEW_URL =
+  "https://www.google.com/search?q=Athena+Fashion+685+Queen+St+W+Toronto#lrd=0x882b35ad17ade3a3:0xbf90f3ab94bcbf5c,3";
+
 const Hero = () => {
   return (
     <motion.section
@@ -15,27 +18,53 @@ const Hero = () => {
         <div className="relative overflow-hidden rounded-3xl bg-[#2c5b53] px-8 py-16 md:px-12 lg:px-16 lg:py-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center">
-              <div className="mb-8 flex items-center gap-2">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z"
-                        fill="white"
-                      />
-                    </svg>
-                  ))}
+              <div className="mb-8 flex flex-wrap items-center gap-x-4 gap-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z"
+                          fill="white"
+                        />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-base font-normal text-white">
+                    Rated 4.9/5
+                  </span>
                 </div>
-                <span className="text-base font-normal text-white">
-                  Rated 4.9/5
-                </span>
+                <a
+                  href={GOOGLE_REVIEW_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm font-normal text-white transition-all hover:border-white hover:bg-white/10 cursor-pointer"
+                >
+                  Leave us a review
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M1.33325 8.00004H14.6666M14.6666 8.00004L7.99992 1.33337M14.6666 8.00004L7.99992 14.6667"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
               </div>
               <h1 className="mb-6 font-serif text-4xl text-left font-normal leading-tight text-white md:text-5xl lg:text-6xl">
                 Custom Tailoring that Fits Your Life Perfectly
