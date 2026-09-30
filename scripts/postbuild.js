@@ -94,7 +94,8 @@ const renderPage = (render, { path: pagePath, title, description }) => {
   return html;
 };
 
-// Served by the host with a 404 status for unknown URLs (see vercel.json), so
+// Served with a 404 status for unknown URLs (vercel.json routes them here after
+// static files, ahead of the CRA preset's index.html fallback), so
 // crawlers get a noindexed "Page not found" instead of a copy of the home page.
 const renderNotFoundPage = (render) => {
   let html = template;
