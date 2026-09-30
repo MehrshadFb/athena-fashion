@@ -1,3 +1,25 @@
 # https://www.robotstxt.org/robotstxt.html
+# All crawlers, including AI search and assistant crawlers, are welcome.
+# A plain-text summary for AI assistants is at https://www.athenafashion.ca/llms.txt
+
 User-agent: *
 Disallow:
+
+# AI search / answer engines (cite and link to the site in AI answers)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# AI model training crawlers (change to "Disallow: /" to opt out of training)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.athenafashion.ca/sitemap.xml

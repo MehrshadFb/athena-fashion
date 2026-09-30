@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import athena from "../assets/athena.png";
+import athena from "../assets/athena-dressmaker-toronto.webp";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -155,6 +155,8 @@ const ContactUs = () => {
                 type="text"
                 name="name"
                 placeholder="Full Name"
+                aria-label="Full name"
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full rounded-xl border-none bg-[#234740] px-6 py-4 text-base text-white placeholder-gray-400 outline-none transition-all focus:bg-[#1e3d37]"
@@ -164,6 +166,8 @@ const ContactUs = () => {
                 type="email"
                 name="email"
                 placeholder="Email Address"
+                aria-label="Email address"
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full rounded-xl border-none bg-[#234740] px-6 py-4 text-base text-white placeholder-gray-400 outline-none transition-all focus:bg-[#1e3d37]"
@@ -173,6 +177,8 @@ const ContactUs = () => {
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
+                aria-label="Phone number"
+                autoComplete="tel"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full rounded-xl border-none bg-[#234740] px-6 py-4 text-base text-white placeholder-gray-400 outline-none transition-all focus:bg-[#1e3d37]"
@@ -181,6 +187,7 @@ const ContactUs = () => {
               <textarea
                 name="comment"
                 placeholder="How Can We Help?"
+                aria-label="How can we help?"
                 value={formData.comment}
                 onChange={handleChange}
                 rows={6}
@@ -215,7 +222,11 @@ const ContactUs = () => {
             <div className="relative h-[400px] w-full overflow-hidden rounded-3xl lg:h-[600px]">
               <img
                 src={athena}
-                alt="Professional Tailor"
+                alt="Athena, designer and dressmaker at Athena Fashion in Toronto"
+                width={1000}
+                height={1200}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

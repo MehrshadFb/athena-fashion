@@ -24,8 +24,9 @@ const AboutMe = () => {
           Who I am
         </h2>
         <p className="mb-12 text-center text-base font-normal leading-relaxed text-gray-600 md:text-lg lg:mb-16 lg:text-xl">
-          Hi, I'm Athena, a professional designer and dressmaker with a passion
-          for creating timeless fashion. Since 2010, I have been dedicated to
+          Hi, I'm Athena, a professional designer and dressmaker based on Queen
+          Street West in Toronto, with a passion for creating timeless
+          fashion. Since 2010, I have been dedicated to
           designing and tailoring bespoke garments that fit beautifully and
           reflect personal style. Whether you need a custom dress for a special
           occasion or expert alterations to perfect your look, I bring

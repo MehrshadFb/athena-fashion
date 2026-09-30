@@ -1,64 +1,66 @@
-import img2_3 from "../assets/portfolio/2.3.jpeg";
-import img2_1 from "../assets/portfolio/2.1.png";
-import img2_2 from "../assets/portfolio/2.2.jpeg";
-import img15 from "../assets/portfolio/15.jpeg";
-import img14 from "../assets/portfolio/14.jpeg";
-import img3 from "../assets/portfolio/3.jpeg";
-import img13 from "../assets/portfolio/13.jpeg";
-import img12 from "../assets/portfolio/12.jpeg";
-import img11 from "../assets/portfolio/11.png";
-import img9 from "../assets/portfolio/9.jpeg";
-import img1_1 from "../assets/portfolio/1.1.jpeg";
-import img1_2 from "../assets/portfolio/1.2.jpeg";
-import img4 from "../assets/portfolio/4.jpeg";
-import img5_1 from "../assets/portfolio/5.1.jpeg";
-import img5_2 from "../assets/portfolio/5.2.jpeg";
-import img5_3 from "../assets/portfolio/5.3.jpeg";
-import imgUntitled from "../assets/portfolio/Untitled design.png";
-import img6 from "../assets/portfolio/6.jpeg";
-import img7_1 from "../assets/portfolio/7.1.jpeg";
-import img7_2 from "../assets/portfolio/7.2.jpeg";
-import img8 from "../assets/portfolio/8.jpeg";
-import img10 from "../assets/portfolio/10.jpeg";
-import img16 from "../assets/portfolio/16.jpeg";
-import img17 from "../assets/portfolio/17.jpeg";
-import img18 from "../assets/portfolio/18.jpeg";
-import img9594 from "../assets/portfolio/IMG_9594.jpeg";
-import img19 from "../assets/portfolio/19.jpeg";
+import purplePrintedGownFitting from "../assets/portfolio/purple-printed-evening-gown-fitting.webp";
+import plumPrintedGownSide from "../assets/portfolio/plum-printed-evening-gown-side-view.webp";
+import plumOmbreGown from "../assets/portfolio/plum-ombre-off-shoulder-evening-gown.webp";
+import pinkDrapedHalterTop from "../assets/portfolio/pink-draped-halter-top.webp";
+import paleBlueSatinGown from "../assets/portfolio/pale-blue-asymmetric-satin-gown.webp";
+import tealLaceGown from "../assets/portfolio/teal-lace-bodice-evening-gown.webp";
+import greyWaterfallCardigan from "../assets/portfolio/grey-draped-waterfall-cardigan.webp";
+import navyEmbroideredSet from "../assets/portfolio/navy-embroidered-top-and-wide-leg-pants.webp";
+import whiteBatwingBlouse from "../assets/portfolio/white-chiffon-batwing-blouse.webp";
+import polkaDotSleeveBlouse from "../assets/portfolio/black-blouse-polka-dot-mesh-sleeves.webp";
+import mermaidWeddingDress from "../assets/portfolio/custom-mermaid-wedding-dress.webp";
+import mermaidWeddingDressLace from "../assets/portfolio/mermaid-wedding-dress-lace-sleeves.webp";
+import polkaDotPuffDress from "../assets/portfolio/polka-dot-puff-sleeve-dress.webp";
+import blackLaceTopTrousers from "../assets/portfolio/black-lace-top-and-flared-trousers.webp";
+import blackLaceTopBack from "../assets/portfolio/black-lace-top-back-detail.webp";
+import orangeBlazer from "../assets/portfolio/orange-blazer-with-black-lace-top.webp";
+import redSequinDress from "../assets/portfolio/red-sequin-sheath-dress.webp";
+import burgundyPinafore from "../assets/portfolio/burgundy-pinafore-dress-bow-blouse.webp";
+import aLineTulleWeddingDress from "../assets/portfolio/a-line-tulle-wedding-dress.webp";
+import tulleWeddingDressLace from "../assets/portfolio/tulle-wedding-dress-lace-sleeves.webp";
+import peachLaceDress from "../assets/portfolio/peach-embroidered-lace-cocktail-dress.webp";
+import tealOneShoulderGown from "../assets/portfolio/teal-one-shoulder-chiffon-gown.webp";
+import burgundyPeplumBlazer from "../assets/portfolio/burgundy-tailored-peplum-blazer.webp";
+import brocadeWrapJacket from "../assets/portfolio/brocade-wrap-jacket.webp";
+import tropicalPrintBlouse from "../assets/portfolio/tropical-print-blouse.webp";
+import greyBalloonSleeveCoat from "../assets/portfolio/grey-coat-with-woven-balloon-sleeves.webp";
+import brownWoolJacket from "../assets/portfolio/brown-wool-jacket-patch-pockets.webp";
 
 export interface PortfolioImage {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 }
 
 const portfolioImages: PortfolioImage[] = [
-  { src: img2_3, alt: "Portfolio image 2.3" },
-  { src: img2_1, alt: "Portfolio image 2.1" },
-  { src: img2_2, alt: "Portfolio image 2.2" },
-  { src: img15, alt: "Portfolio image 15" },
-  { src: img14, alt: "Portfolio image 14" },
-  { src: img3, alt: "Portfolio image 3" },
-  { src: img13, alt: "Portfolio image 13" },
-  { src: img12, alt: "Portfolio image 12" },
-  { src: img11, alt: "Portfolio image 11" },
-  { src: img9, alt: "Portfolio image 9" },
-  { src: img1_1, alt: "Portfolio image 1.1" },
-  { src: img1_2, alt: "Portfolio image 1.2" },
-  { src: img4, alt: "Portfolio image 4" },
-  { src: img5_1, alt: "Portfolio image 5.1" },
-  { src: img5_2, alt: "Portfolio image 5.2" },
-  { src: img5_3, alt: "Portfolio image 5.3" },
-  { src: imgUntitled, alt: "Portfolio design" },
-  { src: img6, alt: "Portfolio image 6" },
-  { src: img7_1, alt: "Portfolio image 7.1" },
-  { src: img7_2, alt: "Portfolio image 7.2" },
-  { src: img8, alt: "Portfolio image 8" },
-  { src: img10, alt: "Portfolio image 10" },
-  { src: img16, alt: "Portfolio image 16" },
-  { src: img17, alt: "Portfolio image 17" },
-  { src: img18, alt: "Portfolio image 18" },
-  { src: img9594, alt: "Portfolio image 9594" },
-  { src: img19, alt: "Portfolio image 19" },
+  { src: purplePrintedGownFitting, width: 1200, height: 1600, alt: "Dressmaker fitting a custom plum off-the-shoulder evening gown with a hand-printed skirt in the Toronto studio" },
+  { src: plumPrintedGownSide, width: 864, height: 1184, alt: "Custom plum evening gown with asymmetric strap and printed skirt, side view on a dress form" },
+  { src: plumOmbreGown, width: 912, height: 1173, alt: "Custom plum ombré off-the-shoulder evening gown with front slit" },
+  { src: pinkDrapedHalterTop, width: 1200, height: 1600, alt: "Custom pink halter top with draped satin ruffle and pastel bust bands" },
+  { src: paleBlueSatinGown, width: 1024, height: 1024, alt: "Pale blue satin gown with halter neckline and asymmetric overlay" },
+  { src: tealLaceGown, width: 815, height: 1109, alt: "Teal evening gown with lace bodice and flowing chiffon skirt" },
+  { src: greyWaterfallCardigan, width: 1024, height: 1024, alt: "Grey draped open-front waterfall cardigan" },
+  { src: navyEmbroideredSet, width: 930, height: 1024, alt: "Navy two-piece set with floral embroidered top and wide-leg pants" },
+  { src: whiteBatwingBlouse, width: 926, height: 1152, alt: "White chiffon batwing blouse with smocked neckline" },
+  { src: polkaDotSleeveBlouse, width: 1024, height: 1024, alt: "Black blouse with sheer polka-dot mesh sleeves" },
+  { src: mermaidWeddingDress, width: 1351, height: 1600, alt: "Custom mermaid wedding dress with lace sleeves and long veil, photographed outdoors" },
+  { src: mermaidWeddingDressLace, width: 1182, height: 1600, alt: "Bride in a custom fitted mermaid wedding dress with lace off-the-shoulder sleeves" },
+  { src: polkaDotPuffDress, width: 1040, height: 1024, alt: "Beige polka-dot dress with puff sleeves and square neckline, with detail views" },
+  { src: blackLaceTopTrousers, width: 928, height: 1152, alt: "Black guipure lace top with flared trousers" },
+  { src: blackLaceTopBack, width: 848, height: 940, alt: "Back detail of a black guipure lace top with scalloped V neckline" },
+  { src: orangeBlazer, width: 724, height: 1024, alt: "Tailored orange blazer worn over a black lace top and flared trousers" },
+  { src: redSequinDress, width: 1024, height: 1024, alt: "Red sequin sleeveless sheath dress" },
+  { src: burgundyPinafore, width: 928, height: 1054, alt: "Burgundy double-breasted pinafore dress over a white bow blouse" },
+  { src: aLineTulleWeddingDress, width: 919, height: 1152, alt: "Custom A-line tulle wedding dress with lace sleeves and cathedral veil" },
+  { src: tulleWeddingDressLace, width: 912, height: 1147, alt: "Tulle wedding gown with sheer lace long sleeves and train" },
+  { src: peachLaceDress, width: 1024, height: 1024, alt: "Peach embroidered lace sleeveless cocktail dress" },
+  { src: tealOneShoulderGown, width: 1021, height: 1024, alt: "Teal one-shoulder chiffon gown with rosette and ruffle cascade" },
+  { src: burgundyPeplumBlazer, width: 1170, height: 1524, alt: "Burgundy tailored peplum blazer with stand collar" },
+  { src: brocadeWrapJacket, width: 924, height: 1018, alt: "Wrap jacket in wavy striped brocade with single button closure" },
+  { src: tropicalPrintBlouse, width: 836, height: 930, alt: "Tropical leaf print blouse with gathered cuffs" },
+  { src: greyBalloonSleeveCoat, width: 892, height: 1024, alt: "Grey double-breasted coat with multicolour woven balloon sleeves" },
+  { src: brownWoolJacket, width: 747, height: 878, alt: "Brown wool jacket with patch pockets and point collar" },
 ];
 
 export default portfolioImages;

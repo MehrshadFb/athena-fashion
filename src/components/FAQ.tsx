@@ -8,6 +8,16 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
+    question: "Where is Athena Fashion located?",
+    answer:
+      "Our tailoring studio is at 685 Queen St W, 2nd Floor, Toronto, ON M6J 1E6, near Queen and Bathurst. We welcome clients from across Toronto.",
+  },
+  {
+    question: "Do you make custom wedding dresses and evening gowns?",
+    answer:
+      "Yes. We design and sew custom bridal gowns, evening gowns, and special-occasion dresses made to your measurements, from the first sketch through the final fitting.",
+  },
+  {
     question: "Do you require an appointment?",
     answer:
       "While walk-ins are welcome, appointments ensure dedicated time for consultations and fittings.",
@@ -74,6 +84,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
                 className="flex w-full items-center justify-between py-6 text-left transition-all"
               >
                 <span className="pr-6 text-base font-normal text-black md:text-lg lg:text-xl">

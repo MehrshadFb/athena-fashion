@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
@@ -9,13 +9,61 @@ import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import PortfolioTeaser from "./components/PortfolioTeaser";
 import PortfolioPage from "./pages/PortfolioPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import pageMeta from "./data/pageMeta.json";
 
-type Page = "home" | "portfolio";
+type Page = "home" | "portfolio" | "notFound";
 
-function App() {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
+const pathForPage: Record<Exclude<Page, "notFound">, string> = {
+  home: pageMeta.home.path,
+  portfolio: pageMeta.portfolio.path,
+};
 
-  const navigateTo = (page: Page, scrollTarget?: string) => {
+const pageFromPath = (pathname: string): Page => {
+  const path = pathname.replace(/\/+$/, "") || "/";
+  if (path === pathForPage.home) return "home";
+  if (path === pathForPage.portfolio) return "portfolio";
+  return "notFound";
+};
+
+interface AppProps {
+  // Set when prerendering at build time, where there is no window.
+  initialPath?: string;
+}
+
+function App({ initialPath }: AppProps) {
+  const [currentPage, setCurrentPage] = useState<Page>(() =>
+    pageFromPath(initialPath ?? window.location.pathname)
+  );
+
+  useEffect(() => {
+    const handlePopState = () =>
+      setCurrentPage(pageFromPath(window.location.pathname));
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    document.title = pageMeta[currentPage].title;
+    // Unknown URLs are served index.html by the host, so tell crawlers not to
+    // index them (avoids soft-404 duplicates of the home page).
+    let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (currentPage === "notFound") {
+      if (!robots) {
+        robots = document.createElement("meta");
+        robots.name = "robots";
+        document.head.appendChild(robots);
+      }
+      robots.content = "noindex";
+    } else {
+      robots?.remove();
+    }
+  }, [currentPage]);
+
+  const navigateTo = (page: Exclude<Page, "notFound">, scrollTarget?: string) => {
+    if (window.location.pathname !== pathForPage[page]) {
+      window.history.pushState(null, "", pathForPage[page]);
+    }
     setCurrentPage(page);
     if (scrollTarget) {
       setTimeout(() => {
@@ -34,16 +82,27 @@ function App() {
     );
   }
 
+  if (currentPage === "notFound") {
+    return (
+      <NotFoundPage
+        onNavigateHome={(sectionId) => navigateTo("home", sectionId)}
+        onNavigatePortfolio={() => navigateTo("portfolio")}
+      />
+    );
+  }
+
   return (
     <div className="App">
       <Navbar onNavigatePortfolio={() => navigateTo("portfolio")} />
-      <Hero />
-      <Services />
-      <AboutMe />
-      <HowItWorks />
-      <PortfolioTeaser onViewPortfolio={() => navigateTo("portfolio")} />
-      <FAQ />
-      <ContactUs />
+      <main>
+        <Hero />
+        <Services />
+        <AboutMe />
+        <HowItWorks />
+        <PortfolioTeaser onViewPortfolio={() => navigateTo("portfolio")} />
+        <FAQ />
+        <ContactUs />
+      </main>
       <Footer />
     </div>
   );

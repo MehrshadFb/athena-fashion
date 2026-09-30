@@ -67,12 +67,13 @@ const Hero = () => {
                 </a>
               </div>
               <h1 className="mb-6 font-serif text-4xl text-left font-normal leading-tight text-white md:text-5xl lg:text-6xl">
-                Custom Tailoring that Fits Your Life Perfectly
+                Custom Tailoring & Dressmaking in Toronto
               </h1>
               <p className="mb-8 text-base font-normal text-left leading-relaxed text-white/90 md:text-lg lg:text-xl">
-                Experience clothing crafted to your style, measurements, and
-                comfort. Our expert tailors deliver precision, elegance, and a
-                personal touch with every stitch.
+                Clothing that fits your life perfectly, crafted to your style,
+                measurements, and comfort. From alterations to bridal and
+                evening gowns, our Queen Street West studio delivers precision,
+                elegance, and a personal touch with every stitch.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <button
@@ -116,7 +117,10 @@ const Hero = () => {
               <div className="relative h-[400px] w-full overflow-hidden rounded-2xl lg:h-[500px]">
                 <img
                   src={sewingMachine}
-                  alt="Sewing Machine"
+                  alt="Tailor cutting fabric at a sewing machine"
+                  width={1500}
+                  height={2250}
+                  fetchPriority="high"
                   className="h-full w-full object-cover"
                 />
               </div>
