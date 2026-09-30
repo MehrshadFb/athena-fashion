@@ -1,16 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ideaImage from "../assets/idea.png";
-import fabricImage from "../assets/fabric.png";
-import craftImage from "../assets/craft.png";
-import adjustmentImage from "../assets/adjustment.png";
-import deliveryImage from "../assets/delivery.png";
+import ideaImage from "../assets/design-inspiration.webp";
+import fabricImage from "../assets/satin-fabric-selection.webp";
+import craftImage from "../assets/sewing-pattern-pieces.webp";
+import adjustmentImage from "../assets/fitting-adjustments.webp";
+import deliveryImage from "../assets/finished-custom-halter-top.webp";
 
 interface ProcessStep {
   number: string;
   title: string;
   description: string;
   image: string;
+  imageAlt: string;
   alignment: "left" | "right";
 }
 
@@ -21,6 +22,7 @@ const processSteps: ProcessStep[] = [
     description:
       "Schedule a consultation to discuss your style preferences and project needs. We'll take measurements and understand your vision for the perfect fit.",
     image: ideaImage,
+    imageAlt: "Client's inspiration image of a pink and green fairy costume",
     alignment: "right",
   },
   {
@@ -29,6 +31,7 @@ const processSteps: ProcessStep[] = [
     description:
       "Choose from our curated collection of premium fabrics or bring your own. We'll help you select the perfect materials and finalize your design details.",
     image: fabricImage,
+    imageAlt: "Satin fabric swatches in pink, teal, mint and mauve with tailor's shears",
     alignment: "left",
   },
   {
@@ -37,6 +40,7 @@ const processSteps: ProcessStep[] = [
     description:
       "Our skilled tailors begin crafting your custom piece with meticulous attention to detail, ensuring every stitch meets our high standards of quality.",
     image: craftImage,
+    imageAlt: "Paper sewing pattern pieces drafted for a custom garment",
     alignment: "right",
   },
   {
@@ -45,6 +49,7 @@ const processSteps: ProcessStep[] = [
     description:
       "Try on your garment for a fitting session. We'll make any necessary adjustments to ensure a perfect, comfortable fit that exceeds your expectations.",
     image: adjustmentImage,
+    imageAlt: "Bustier bodice being fitted and adjusted on a dress form",
     alignment: "left",
   },
   {
@@ -53,6 +58,7 @@ const processSteps: ProcessStep[] = [
     description:
       "Receive your beautifully crafted, custom-fitted garment. Walk away with confidence knowing your clothing fits perfectly and reflects your unique style.",
     image: deliveryImage,
+    imageAlt: "Finished custom pink halter top with draped satin ruffle on a dress form",
     alignment: "right",
   },
 ];
@@ -101,7 +107,9 @@ const HowItWorks = () => {
                 <div className="relative w-full overflow-hidden rounded-3xl lg:w-4/5">
                   <img
                     src={step.image}
-                    alt={step.title}
+                    alt={step.imageAlt}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover md:h-80 lg:h-88"
                   />
                 </div>

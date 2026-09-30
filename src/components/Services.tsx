@@ -13,26 +13,26 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: <img src={scissor} alt="Scissor Icon" className="h-8 w-8" />,
-    title: "Alteration",
+    icon: <img src={scissor} alt="" className="h-8 w-8" />,
+    title: "Clothing Alterations",
     description:
-      "We alter and adjust your garments for a flawless fit, ensuring comfort and style every time.",
+      "Hemming, resizing, tapering, and zipper replacement. We alter and adjust your garments for a flawless fit, ensuring comfort and style every time.",
   },
   {
-    icon: <img src={dress} alt="Dress Icon" className="h-8 w-8" />,
-    title: "Dressmaking",
+    icon: <img src={dress} alt="" className="h-8 w-8" />,
+    title: "Custom Dressmaking",
     description:
-      "From bridal and evening gowns to custom dresses and everyday wear, we craft garments tailored to your style.",
+      "From bridal and evening gowns to custom dresses and everyday wear, we design and sew made-to-measure garments tailored to your style.",
   },
   {
-    icon: <img src={sewing} alt="Sewing Icon" className="h-8 w-8" />,
-    title: "Sewing",
+    icon: <img src={sewing} alt="" className="h-8 w-8" />,
+    title: "Sewing Services",
     description:
       "Expert sewing services for garments, curtains, upholstery, and more—customized to your needs.",
   },
   {
-    icon: <img src={fabric} alt="Fabric Icon" className="h-8 w-8" />,
-    title: "Others...",
+    icon: <img src={fabric} alt="" className="h-8 w-8" />,
+    title: "Buttons & Finishing",
     description:
       "We offer buttonholes, snap buttons, fabric button attachment, and other specialized sewing services.",
   },
@@ -58,7 +58,7 @@ const Services = () => {
           </div>
         </div>
         <h2 className="mb-12 text-center font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:mb-16 lg:text-5xl">
-          Our tailoring services crafted just for you
+          Tailoring, alterations & dressmaking crafted just for you
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {services.map((service, index) => (

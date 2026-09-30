@@ -37,7 +37,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
       <Navbar
         onNavigatePortfolio={() => {}}
         onNavigateHome={onNavigateHome}
-        isPortfolioPage
+        isSubPage
       />
 
       <main className="w-full px-6 py-16 md:px-8 md:py-20 lg:px-12 lg:py-24">
@@ -56,9 +56,16 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
               </span>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <h1 className="font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:text-5xl">
-                Our Work
-              </h1>
+              <div>
+                <h1 className="font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:text-5xl">
+                  Custom Dresses & Tailoring Portfolio
+                </h1>
+                <p className="mt-4 max-w-2xl text-base font-normal leading-relaxed text-gray-600 md:text-lg">
+                  Wedding dresses, evening gowns, blazers, coats and blouses
+                  designed and sewn to measure in our Queen Street West studio
+                  in Toronto.
+                </p>
+              </div>
 
               {/* Grid size control */}
               {portfolioImages.length > 0 && (
@@ -121,6 +128,10 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
                     <img
                       src={image.src}
                       alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      loading={index < 6 ? "eager" : "lazy"}
+                      decoding="async"
                       className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20 rounded-2xl" />
@@ -141,6 +152,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
           <button
             className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20 cursor-pointer"
             onClick={() => setLightboxIndex(null)}
+            aria-label="Close"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
@@ -152,6 +164,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
               <button
                 className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20 cursor-pointer"
                 onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                aria-label="Previous image"
               >
                 <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 12L6 8L10 4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -160,6 +173,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigateHome }) => {
               <button
                 className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-white/20 cursor-pointer"
                 onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                aria-label="Next image"
               >
                 <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6 4L10 8L6 12" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

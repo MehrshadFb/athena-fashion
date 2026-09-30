@@ -1,6 +1,17 @@
 import React from "react";
 import logo from "../assets/athena-fashion-logo.webp";
 
+const scrollToSection = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  sectionId: string
+) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    e.preventDefault();
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const Footer = () => {
   return (
     <footer className="w-full px-6 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
@@ -11,7 +22,7 @@ const Footer = () => {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2c5b53] p-2">
                 <img
                   src={logo}
-                  alt="Athena Fashion Logo"
+                  alt=""
                   className="h-full w-full"
                 />
               </div>
@@ -19,14 +30,16 @@ const Footer = () => {
                 Athena Fashion
               </span>
             </div>
-            <a
-              href="https://www.google.com/maps/place/Athena+Fashion+(%D8%AE%DB%8C%D8%A7%D8%B7%DB%8C)%E2%80%AD/@43.6468921,-79.4056544,18z/data=!3m2!4b1!5s0x882b34e73205aef7:0x3d2f2c9b6be62909!4m6!3m5!1s0x882b35ad17ade3a3:0xbf90f3ab94bcbf5c!8m2!3d43.6468921!4d-79.4050107!16s%2Fg%2F11yc7vl54b?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-6 text-sm text-left font-normal leading-relaxed text-gray-600 md:text-base hover:underline cursor-pointer"
-            >
-              685 Queen St W, 2nd Floor <br />Toronto, ON M6J 1E6
-            </a>
+            <address className="not-italic">
+              <a
+                href="https://www.google.com/maps/place/Athena+Fashion+(%D8%AE%DB%8C%D8%A7%D8%B7%DB%8C)%E2%80%AD/@43.6468921,-79.4056544,18z/data=!3m2!4b1!5s0x882b34e73205aef7:0x3d2f2c9b6be62909!4m6!3m5!1s0x882b35ad17ade3a3:0xbf90f3ab94bcbf5c!8m2!3d43.6468921!4d-79.4050107!16s%2Fg%2F11yc7vl54b?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-6 text-sm text-left font-normal leading-relaxed text-gray-600 md:text-base hover:underline cursor-pointer"
+              >
+                685 Queen St W, 2nd Floor <br />Toronto, ON M6J 1E6
+              </a>
+            </address>
           </div>
           <div>
             <h3 className="mb-4 text-base font-semibold text-black md:text-lg">
@@ -35,70 +48,45 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("services")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={(e) => scrollToSection(e, "services")}
                 >
                   Services
                 </a>
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="/#about"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("about")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={(e) => scrollToSection(e, "about")}
                 >
                   About Me
                 </a>
               </li>
               <li>
                 <a
-                  href="#how-it-works"
+                  href="/#how-it-works"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("how-it-works")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={(e) => scrollToSection(e, "how-it-works")}
                 >
                   How it works
                 </a>
               </li>
               <li>
                 <a
-                  href="#faq"
+                  href="/#faq"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("faq")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={(e) => scrollToSection(e, "faq")}
                 >
                   FAQ
                 </a>
               </li>
               <li>
                 <a
-                  href="#contact-us"
+                  href="/#contact-us"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById("contact-us")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={(e) => scrollToSection(e, "contact-us")}
                 >
                   Contact Us
                 </a>
@@ -147,7 +135,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="tel:+123456789"
+                  href="tel:+14376023940"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
                   +1 (437) 602 3940
@@ -163,7 +151,7 @@ const Footer = () => {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-300 pt-8 md:flex-row">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <span>Copyright @ 2026</span>
+            <span>© {new Date().getFullYear()}</span>
             <span className="text-gray-400">●</span>
             <span>Athena Fashion</span>
           </div>

@@ -27,15 +27,19 @@ const PortfolioTeaser: React.FC<PortfolioTeaserProps> = ({
             </div>
 
             <h2 className="mb-6 font-serif text-3xl font-normal leading-tight text-black md:text-4xl lg:text-5xl">
-              See the work we're proud of
+              Custom dresses and tailoring we're proud of
             </h2>
 
             <p className="mb-10 max-w-xl text-base font-normal leading-relaxed text-gray-600 md:text-lg">
               Browse our portfolio of custom-made designs, where every garment is thoughtfully created and sewn to perfection.
             </p>
 
-            <button
-              onClick={onViewPortfolio}
+            <a
+              href="/portfolio"
+              onClick={(e) => {
+                e.preventDefault();
+                onViewPortfolio();
+              }}
               className="flex items-center gap-2 rounded-full bg-[#2c5b53] px-8 py-4 text-base font-normal text-white transition-all hover:bg-[#234740] cursor-pointer"
             >
               View Portfolio
@@ -45,6 +49,7 @@ const PortfolioTeaser: React.FC<PortfolioTeaserProps> = ({
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M1.33325 8.00004H14.6666M14.6666 8.00004L7.99992 1.33337M14.6666 8.00004L7.99992 14.6667"
@@ -54,7 +59,7 @@ const PortfolioTeaser: React.FC<PortfolioTeaserProps> = ({
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </a>
           </div>
 
           {/* Decorative background dots */}

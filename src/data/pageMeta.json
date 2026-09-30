@@ -1,0 +1,16 @@
+{
+  "siteUrl": "https://www.athenafashion.ca",
+  "home": {
+    "path": "/",
+    "title": "Toronto Tailor, Alterations & Dressmaking | Athena Fashion",
+    "description": "Athena Fashion is a tailor and dressmaker on Queen St W in Toronto offering clothing alterations, custom dresses, bridal and evening gowns, and sewing. Book a fitting."
+  },
+  "portfolio": {
+    "path": "/portfolio",
+    "title": "Custom Dress & Tailoring Portfolio | Athena Fashion Toronto",
+    "description": "Browse custom wedding dresses, evening gowns, blazers, coats and blouses designed and sewn by Athena Fashion, a dressmaker on Queen St W in Toronto."
+  },
+  "notFound": {
+    "title": "Page not found | Athena Fashion"
+  }
+}
