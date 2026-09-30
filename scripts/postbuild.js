@@ -94,6 +94,19 @@ const renderPage = (render, { path: pagePath, title, description }) => {
   return html;
 };
 
+// Served by the host with a 404 status for unknown URLs (see vercel.json), so
+// crawlers get a noindexed "Page not found" instead of a copy of the home page.
+const renderNotFoundPage = (render) => {
+  let html = template;
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, () =>
+    `<title>${escapeHtml(meta.notFound.title)}</title><meta name="robots" content="noindex"/>`
+  );
+  html = replaceOnce(html, /<link rel="canonical" href="[^"]*"\/?>/, () => "");
+  html = replaceOnce(html, /<meta property="og:url" content="[^"]*"\/?>/, () => "");
+  html = replaceOnce(html, /<div id="root"><\/div>/, () => `<div id="root">${render("/404")}</div>`);
+  return html;
+};
+
 loadRenderer()
   .then((render) => {
     for (const page of [meta.home, meta.portfolio]) {
@@ -102,6 +115,8 @@ loadRenderer()
       fs.writeFileSync(path.join(outDir, "index.html"), renderPage(render, page));
       console.log(`postbuild: prerendered ${path.join(page.path, "index.html")}`);
     }
+    fs.writeFileSync(path.join(buildDir, "404.html"), renderNotFoundPage(render));
+    console.log("postbuild: prerendered /404.html");
   })
   .catch((error) => {
     console.error(error);
