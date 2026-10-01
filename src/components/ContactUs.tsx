@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import athena from "../assets/athena-dressmaker-toronto.webp";
+import businessHours from "../data/businessHours";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -102,6 +103,16 @@ const ContactUs = () => {
             <h2 className="mb-8 font-serif text-3xl text-left font-normal leading-tight text-white md:text-4xl lg:mb-12 lg:text-5xl">
               Get in touch with our experts team
             </h2>
+            <div className="mb-8 space-y-2 text-left text-sm font-normal text-white/80 md:text-base">
+              <p>685 Queen St W, 2nd Floor, Toronto, ON M6J 1E6</p>
+              <p className="flex flex-wrap gap-x-4 gap-y-1">
+                {businessHours.map(({ days, hours }) => (
+                  <span key={days} className="whitespace-nowrap">
+                    {days}: {hours}
+                  </span>
+                ))}
+              </p>
+            </div>
             {submitStatus.show && (
               <div
                 className={`mb-6 rounded-xl px-6 py-4 ${
