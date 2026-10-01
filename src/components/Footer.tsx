@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/athena-fashion-logo.webp";
+import businessHours from "../data/businessHours";
 
 const scrollToSection = (
   e: React.MouseEvent<HTMLAnchorElement>,
@@ -30,6 +31,9 @@ const Footer = () => {
                 Athena Fashion
               </span>
             </div>
+            <h3 className="mb-4 text-base font-semibold text-black md:text-lg">
+              Address
+            </h3>
             <address className="not-italic">
               <a
                 href="https://www.google.com/maps/place/Athena+Fashion+(%D8%AE%DB%8C%D8%A7%D8%B7%DB%8C)%E2%80%AD/@43.6468921,-79.4056544,18z/data=!3m2!4b1!5s0x882b34e73205aef7:0x3d2f2c9b6be62909!4m6!3m5!1s0x882b35ad17ade3a3:0xbf90f3ab94bcbf5c!8m2!3d43.6468921!4d-79.4050107!16s%2Fg%2F11yc7vl54b?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
@@ -40,6 +44,17 @@ const Footer = () => {
                 685 Queen St W, 2nd Floor <br />Toronto, ON M6J 1E6
               </a>
             </address>
+            <h3 className="mb-4 mt-6 text-base font-semibold text-black md:text-lg">
+              Hours
+            </h3>
+            <ul className="space-y-2 text-sm font-normal text-gray-600 md:text-base">
+              {businessHours.map(({ days, hours }) => (
+                <li key={days}>
+                  <span className="block text-black">{days}</span>
+                  {hours}
+                </li>
+              ))}
+            </ul>
           </div>
           <div>
             <h3 className="mb-4 text-base font-semibold text-black md:text-lg">
@@ -95,7 +110,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="mb-4 text-base font-semibold text-black md:text-lg">
-              Follow us:
+              Social
             </h3>
             <ul className="space-y-3">
               <li>
@@ -115,7 +130,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/atena-rahimisadegh-0325192b5/"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
-                  Linkedin
+                  LinkedIn
                 </a>
               </li>
             </ul>
@@ -138,13 +153,8 @@ const Footer = () => {
                   href="tel:+14376023940"
                   className="text-sm font-normal text-gray-600 transition-colors hover:text-black md:text-base"
                 >
-                  +1 (437) 602 3940
+                  +1 (437) 602-3940
                 </a>
-              </li>
-              <li>
-                <p className="text-sm font-normal text-gray-600 md:text-base">
-                  Toronto, Canada
-                </p>
               </li>
             </ul>
           </div>
